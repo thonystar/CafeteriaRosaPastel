@@ -160,13 +160,11 @@ nav {
     color: #ebe6e6;
 }
 
+/* codigo para hacer responsive la página */
 
-
-
-
-
-
-
-
- 
-
+@media (max-width: 480px){
+    .menu{
+        flex-direction: column;
+        align-items: center;
+    }
+}
