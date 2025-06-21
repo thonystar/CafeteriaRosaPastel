@@ -1,0 +1,112 @@
+
+/* configurando el body */
+
+body {
+    background-image: url("../imagenes/menu2.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+/* se edita el header */
+.menu-header {
+    text-align: center;
+    padding: 20px;  
+}
+
+.menu-header h1 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.list-header {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+}
+
+.list-header li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #f7e6da;
+    border-radius: 8px;
+    color: #0a0502;
+    font-weight: bold;
+}
+
+.list-header li a.activo, 
+.list-header li a:hover {
+    background-color: #72523f;
+    color: white;
+}
+
+/* se edita el section de categorias*/
+
+.categorias {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.categorias a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #473125;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.categorias a.categoria-activo {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* se edita el section de los productos */
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.producto {
+    width: 200px;
+    background-color: #ffefba;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+.producto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* se edita el boton */
+
+.producto button {
+    margin-top: 10px;
+    background-color: #e39797;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.producto button:hover{
+    background-color: #86634e;
+}
+
