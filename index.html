@@ -1,45 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CafeteriaRosaPastel</title>
-    <link rel="stylesheet" href="./css/stylos.css">
+    <title>Cafetería Rosa Pastel</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-R...TuHashAquí..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <section class="repertorio">
         <header>
-            <h2 class="logo">Rosa Pastel</h2>
+            <div class="container-logo">
+                  <i class="fa-solid fa-mug-hot"></i>
+                  <h2 class="logo" aria-label="Nombre de la cafetería">Rosa Pastel</h2>
+            </div>
             <div class="container">
                 <nav>
                     <ul class="menu">
                         <li class="desplegable">
-                        <a href="#">Menu</a>
+                            <a href="#">Menú</a>
                             <ul class="submenu">
-                                <li><a href="./menu.html">Cofe y Bebidas</a></li>
+                                <li><a href="#">Café y Bebidas</a></li>
                                 <li><a href="#">Ensaladas y Sopas</a></li>
                                 <li><a href="#">Combos Rosa Pastel</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Ubicacion</a></li>
+                        <li><a href="#">Ubicación</a></li>
                         <li><a href="#">Delivery</a></li>
                         <li><a href="#">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        
-        <video src="./video/coffe2.mp4" muted loop autoplay></video>
+
+        <video src="./video/coffe2.mp4" muted loop autoplay>
+            Tu navegador no soporta el video HTML5.
+        </video>
         <div class="overlay"></div>
+
         <div class="text">
-            <h2>CAFETERIA</h2>
+            <h2>CAFETERÍA</h2>
             <h3>SALUDABLE</h3>
-            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, labore vitae! Odio qui voluptate, esse ex voluptas atque temporibus iusto excepturi! Doloremque quis distinctio nihil. Debitis esse magni soluta? Quidem.</P>
-            <a href="#" class="boton">RESERVA AHORA</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, labore vitae! Odio qui voluptate, esse ex voluptas atque temporibus iusto excepturi! Doloremque quis distinctio nihil. Debitis esse magni soluta? Quidem.</p>
+            <a class="boton" href="http://127.0.0.1:3000/pages/Formulario.html">Reserva Ahora</a>           
         </div>
     </section>
+    <div class="contenedor-Fondo">
+    <h1>PRODUCTOS TOP</h1>
+    <div class="contenedor-sliders">
     
-    
+
+    <!-- Slider 1 -->
+        <section class="productos-top">
+      
+      <div class="slider" id="slider1">
+        <div class="slides">
+          <div class="slide">
+            <img src="./imagenes/IM2.png" alt="Frapuchino" />
+            <div class="descripcion">Frapuchino Clásico – Refrescante mezcla de café y hielo.</div>
+          </div>
+          <div class="slide">
+            <img src="./imagenes/IM3.png" alt="Macadamia Frappuccino" />
+            <div class="descripcion">Frappuccino de Macadamia – Cremoso y con un toque de nuez.</div>
+          </div>
+          <div class="slide">
+            <img src="./imagenes/IM4.png" alt="Latte Macchiato" />
+            <div class="descripcion">Latte Macchiato – Café suave con leche vaporizada y espuma.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots" id="dots1">
+        <span class="dot active" data-index="0" data-slider="1"></span>
+        <span class="dot" data-index="1" data-slider="1"></span>
+        <span class="dot" data-index="2" data-slider="1"></span>
+      </div>
+    </section>
+
+    <!-- Slider 2 -->
+    <section class="productos-top">
+      
+      <div class="slider" id="slider2">
+        <div class="slides">
+          <div class="slide">
+            <img src="./imagenes/IM5.png" alt="Cappuccino" />
+            <div class="descripcion">Ensalada griega - Verduras de temporada en un plato.</div>
+          </div>
+          <div class="slide">
+            <img src="./imagenes/IM6.png" alt="Mocha" />
+            <div class="descripcion">Crema de zapallo y pimentones - Deliciosa y reconfortante crema elaborada con zapallo asado y pimentones rojos.</div>
+          </div>
+          <div class="slide">
+            <img src="./imagenes/IM7.png" alt="Espresso" />
+            <div class="descripcion">Ensalada mediterranea de col morada.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots" id="dots2">
+        <span class="dot active" data-index="0" data-slider="2"></span>
+        <span class="dot" data-index="1" data-slider="2"></span>
+        <span class="dot" data-index="2" data-slider="2"></span>
+      </div>
+    </section>
+
+    <!-- Slider 3 -->
+    <section class="productos-top">
+      
+      <div class="slider" id="slider3">
+        <div class="slides">
+          <div class="slide">
+            <img src="./imagenes/IM8-removebg-preview.png" alt="Americano" />
+            <div class="descripcion">¡Compartir siempre es mejor!. Elige 2 bebidas entre Mocha Frappuccino, Caramel Frappuccino o Café Frappuccino y combínalo con 1 keke y 1 galleta a elección.</div>
+          </div>
+          <div class="slide">
+            <img src="./imagenes/IM3.png" alt="Frappé" />
+            <div class="descripcion">Frappé – Bebida fría y dulce con café y hielo.</div>
+          </div>
+          <div class="slide">
+            <img src="./imagenes/IM4.png" alt="Chai Latte" />
+            <div class="descripcion">Chai Latte – Té especiado con leche cremosa.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots" id="dots3">
+        <span class="dot active" data-index="0" data-slider="3"></span>
+        <span class="dot" data-index="1" data-slider="3"></span>
+        <span class="dot" data-index="2" data-slider="3"></span>
+      </div>
+    </section>
+
+  </div>
+  </div>
+  
+
+  <script>
+    // Función para mover un slider dado el id y el índice del slide
+    function moveToSlide(sliderId, index) {
+      const slider = document.getElementById(sliderId);
+      const slides = slider.querySelector('.slides');
+      const dotsContainer = document.getElementById('dots' + sliderId.replace('slider', ''));
+
+      slides.style.transform = `translateX(-${index * 100}%)`;
+
+      const dots = dotsContainer.querySelectorAll('.dot');
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    // Añade eventos a todos los dots para todos los sliders
+    document.querySelectorAll('.dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'));
+        const sliderNumber = dot.getAttribute('data-slider');
+        moveToSlide('slider' + sliderNumber, index);
+      });
+    });
+  </script>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Rosa Pastel Cafetería <i class="fa-solid fa-mug-hot"></i>. Todos los derechos reservados.</p>
+    <p>
+      Síguenos en 
+      <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i>
+</a> /
+      <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      
+    </p>
+  </div>
+</footer>
+      
+
+
+ 
 </body>
 </html>
