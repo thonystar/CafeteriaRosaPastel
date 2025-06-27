@@ -1,13 +1,6 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/estilosForm.css">
- </head>
- <body>
-    <section class="reserva">
+<link rel="stylesheet" href="../css/estilosForm.css"> 
+    
+      <section class="reserva">
     <h2>Reserva tu Mesa</h2>
     <form action="#" method="POST">
         <label for="nombre">Nombre:</label>
@@ -25,6 +18,16 @@
         <button type="submit">Enviar Reserva</button>
     </form>
     </section>
-    
-    </body>
- </html>
+    <script>
+  // Este script se ejecutará cuando el archivo se cargue dentro del modal
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('form-reserva');
+    const mensaje = document.getElementById('mensaje-reserva');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Evita el envío real
+      mensaje.innerHTML = '<p style="color:green;">¡Reserva enviada con éxito!</p>';
+      form.reset(); // Opcional: limpia el formulario
+    });
+  });
+</script>
