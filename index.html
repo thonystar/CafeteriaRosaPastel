@@ -20,7 +20,7 @@
                         <li class="desplegable">
                             <a href="#">Menú</a>
                             <ul class="submenu">
-                                <li><a href="#" onclick="cargarsubtema('subtema/menu.hmtl')">Café y Bebidas</a></li>
+                                <li><a href="menu.html">Café y Bebidas</a></li>
                                 <li><a href="ensaladas.html">Ensaladas y Sopas</a></li>
                                 <li><a href="Combos.html">Combos Rosa Pastel</a></li>
                             </ul>
@@ -30,7 +30,7 @@
                         <li><a href="Contactanos.html">Contacto</a></li>
                     </ul>
                 </nav>
-                <div id="subtema-contenido" style="margin-top: 100px;"></div>
+                
             </div>
         </header>
 
@@ -172,20 +172,7 @@
     </p>
   </div>
 </footer>
-      <script>
-  function cargarSubtema(url) {
-    fetch(url)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('subtema-contenido').innerHTML = data;
-        window.scrollTo({ top: document.getElementById('subtema-contenido').offsetTop - 60, behavior: 'smooth' });
-      })
-      .catch(error => {
-        document.getElementById('subtema-contenido').innerHTML = "<p>Error al cargar el subtema.</p>";
-        console.error(error);
-      });
-  }
-</script>
+      
 
 
  
