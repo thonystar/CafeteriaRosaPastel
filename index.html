@@ -20,31 +20,41 @@
                         <li class="desplegable">
                             <a href="#">Menú</a>
                             <ul class="submenu">
-                                <li><a href="menu.html">Café y Bebidas</a></li>
-                                <li><a href="ensaladas.html">Ensaladas y Sopas</a></li>
-                                <li><a href="Combos.html">Combos Rosa Pastel</a></li>
+                                <li><a href="#">Café y Bebidas</a></li>
+                                <li><a href="#">Ensaladas y Sopas</a></li>
+                                <li><a href="#">Combos Rosa Pastel</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Ubicación</a></li>
                         <li><a href="#">Delivery</a></li>
-                        <li><a href="Contactanos.html">Contacto</a></li>
+                        <li><a href="#">Contacto</a></li>
                     </ul>
                 </nav>
                 
             </div>
         </header>
-
+        
         <video src="./video/coffe2.mp4" muted loop autoplay>
             Tu navegador no soporta el video HTML5.
         </video>
         <div class="overlay"></div>
-
+        
         <div class="text">
             <h2>CAFETERÍA</h2>
             <h3>SALUDABLE</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, labore vitae! Odio qui voluptate, esse ex voluptas atque temporibus iusto excepturi! Doloremque quis distinctio nihil. Debitis esse magni soluta? Quidem.</p>
-            <a class="boton" href="http://127.0.0.1:3000/Formulario.html">Reserva Ahora</a>           
-        </div>
+            <a class="boton" id="abrirModal">Reserva Ahora</a>
+            <div id="modal" class="modal">
+              <div class="modal-contenido">
+                <span class="cerrar" id="cerrarModal">&times;</span>
+                    <div id="contenidoFormulario">
+            <!-- Aquí se cargará Formulario.html dinámicamente -->
+                        <p>Cargando formulario...</p>
+                    </div>
+              </div>
+            </div>
+                
+        
     </section>
     <div class="contenedor-Fondo">
     <h1>PRODUCTOS TOP</h1>
@@ -58,15 +68,15 @@
         <div class="slides">
           <div class="slide">
             <img src="./imagenes/IM2.png" alt="Frapuchino" />
-            <div class="descripcion">Frapuchino Clásico – Refrescante mezcla de café y hielo.</div>
+            <div class="descripcion">Frapuchino Clásico - Refrescante mezcla de café y hielo.</div>
           </div>
           <div class="slide">
             <img src="./imagenes/IM3.png" alt="Macadamia Frappuccino" />
-            <div class="descripcion">Frappuccino de Macadamia – Cremoso y con un toque de nuez.</div>
+            <div class="descripcion">Frappuccino de Macadamia - Cremoso y con un toque de nuez.</div>
           </div>
           <div class="slide">
             <img src="./imagenes/IM4.png" alt="Latte Macchiato" />
-            <div class="descripcion">Latte Macchiato – Café suave con leche vaporizada y espuma.</div>
+            <div class="descripcion">Latte Macchiato - Café suave con leche vaporizada y espuma.</div>
           </div>
         </div>
       </div>
@@ -116,11 +126,11 @@
           </div>
           <div class="slide">
             <img src="./imagenes/IM3.png" alt="Frappé" />
-            <div class="descripcion">Frappé – Bebida fría y dulce con café y hielo.</div>
+            <div class="descripcion">Frappé - Bebida fría y dulce con café y hielo.</div>
           </div>
           <div class="slide">
             <img src="./imagenes/IM4.png" alt="Chai Latte" />
-            <div class="descripcion">Chai Latte – Té especiado con leche cremosa.</div>
+            <div class="descripcion">Chai Latte - Té especiado con leche cremosa.</div>
           </div>
         </div>
       </div>
@@ -172,7 +182,43 @@
     </p>
   </div>
 </footer>
-      
+       <script>
+    const abrirModal = document.getElementById('abrirModal');
+    const cerrarModal = document.getElementById('cerrarModal');
+    const modal = document.getElementById('modal');
+    const contenidoFormulario = document.getElementById('contenidoFormulario');
+
+    abrirModal.onclick = function () {
+      modal.style.display = 'block';
+
+      // Cargar el contenido de Formulario.html
+      fetch('./pages/Formulario.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("No se pudo cargar el formulario");
+          }
+          return response.text();
+        })
+        .then(html => {
+          contenidoFormulario.innerHTML = html;
+        })
+        .catch(error => {
+          contenidoFormulario.innerHTML = `<p style="color:red;">Error al cargar el formulario.</p>`;
+          console.error(error);
+        });
+    };
+
+    cerrarModal.onclick = function () {
+      modal.style.display = 'none';
+    };
+
+    // Cerrar si se hace clic fuera del contenido
+    window.onclick = function (e) {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
 
 
  
