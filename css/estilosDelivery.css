@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../imagenes/ImagenDelivery.jpg"); /* imagen de buena calidad */
+  background-size: cover;            /* cubre toda la pantalla */
+  background-position: center;       /*centrar fondo */
+  margin: 0;
+  padding: 0;
+}
+
+/*Banner*/
+.banner {
+  background-color: #6b3e26;
+  padding: 15px; /*se utiliza para crear espacio interno */
+  text-align: center;
+  color: rgba(255, 248, 238, 0.9); 
+  font-size: 20px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+/*formulario*/
+.delivery {
+  background-color: rgba(255, 248, 238, 0.9); 
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+
+.delivery h2 {
+  text-align: center;
+  color: #6b3e26;
+}
+
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery-form div {
+  margin-top: 10px;
+}
+.delivery-form label {
+  color: #662d15;
+  font-weight: bold;
+}
+
+.delivery-form input,
+.delivery-form select {
+  padding: 5px;
+  border: 1px solid #ccccccf6;
+  border-radius: 6px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.delivery-form button {
+  margin-top: 25px;
+  padding: 12px;
+  background-color: #b85c38;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 10px;
+  cursor: pointer;
+  
+}
+
+.delivery-form button:hover {
+  background-color: #9e4d2f;
+}
+#piePagina{
+  text-align: center;
+  color: rgb(15, 11, 11);
+  
+}
