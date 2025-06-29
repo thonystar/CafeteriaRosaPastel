@@ -20,7 +20,7 @@
                         <li class="desplegable">
                             <a href="#">Menú</a>
                             <ul class="submenu">
-                                <li><a href="#">Café y Bebidas</a></li>
+                                <li><a href="#" onclick="cargarMenu('menu.html')>Café y Bebidas</a></li>
                                 <li><a href="#">Ensaladas y Sopas</a></li>
                                 <li><a href="#">Combos Rosa Pastel</a></li>
                             </ul>
@@ -57,6 +57,7 @@
         
     </section>
     <div class="contenedor-Fondo">
+    <div id="contenido-menu" class="principal-menu"></div>
     <h1>PRODUCTOS TOP</h1>
     <div class="contenedor-sliders">
     
@@ -219,7 +220,18 @@
       }
     };
   </script>
-
+<script>
+  function cargarMenu(archivo) {
+    fetch(archivo)
+      .then(response => response.text())
+      .then(data => {
+        const contenedor = document.getElementById('contenido-menu');
+        contenedor.innerHTML = data;
+        contenedor.scrollIntoView({ behavior: 'smooth' });
+      })
+      .catch(error => console.error('Error al cargar el menú:', error));
+  }
+</script>
 
  
 </body>
