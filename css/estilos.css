@@ -131,6 +131,7 @@ nav ul li:hover::after {
     background: #111;
     z-index: 2;
     overflow: hidden;
+    padding-top: 100px;
 }
 
 .repertorio video {
@@ -195,6 +196,41 @@ nav ul li:hover::after {
 .boton:hover {
     background-color: #d88282;
 }
+.modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-contenido {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .cerrar:hover {
+      color: black;
+    }
 
 .centrado {
     position: fixed;
@@ -239,7 +275,7 @@ body > p {
     
 }
   
-.contenedor-sliders {
+ .contenedor-sliders {
       display: flex;
       gap: 20px;
       justify-content: center;

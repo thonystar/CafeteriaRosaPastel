@@ -1,0 +1,465 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ENCABEZADO */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(160, 67, 67, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+header .logo {
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+}
+.container-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /
+}
+
+.container-logo i {
+  font-size: 24px;
+  color: #000000; 
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3e2f23;
+}
+
+/* MENU */
+.container {
+    background: transparent;
+}
+
+nav {
+    margin-bottom: 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 5px;
+}
+
+nav ul li {
+    padding: 2px 30px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f0ecec;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.4s;
+    display: inline-block;
+}
+
+nav ul li::after {
+    content: '';
+    background: #d88282;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+nav ul li:hover {
+    color: #ffffff;
+}
+
+nav ul li:hover::after {
+    top: 50%;
+    opacity: 1;
+}
+
+.menu li a {
+    color: #fffefd;
+    text-decoration: none;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.desplegable:hover .submenu {
+    display: block;
+}
+
+/* SECCIÓN PRINCIPAL */
+.repertorio {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    z-index: 2;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+.repertorio video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    mix-blend-mode: overlay;
+    z-index: 1;
+}
+.text, .modal {
+   z-index: 2;
+  position: relative;
+}
+
+.text {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+}
+
+.text h2 {
+    font-size: 3em;
+    font-weight: 800;
+    color: #f1f1f1;
+    text-transform: uppercase;
+}
+
+.text h3 {
+    color: white;
+    font-size: 1.5em;
+    margin-top: 5px;
+}
+
+.text p {
+    font-size: 1.1em;
+    color: #ebe6e6;
+    margin: 20px 0;
+    font-weight: 400;
+}
+
+.boton {
+    z-index: 11;
+    text-decoration: none;
+    color: #f1e9e9;
+    background-color: #d882826c;
+    border-radius: 10px;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #d88282;
+}
+.modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-contenido {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .cerrar:hover {
+      color: black;
+    }
+
+.centrado {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(160, 67, 67, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    width: 260px;
+    color: white;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 13px;
+}
+
+body > p {
+    margin-top: 120px;
+    color: #161515;
+    padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .repertorio {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .text h2 {
+        font-size: 2em;
+    }
+
+    nav ul.menu {
+        flex-direction: column;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    
+}
+  
+ .contenedor-sliders {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      
+      
+      
+    }
+
+    .productos-top {
+      flex: 1 1 300px; 
+      max-width: 320px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 15px;
+      background-color: #d88282;
+      margin-bottom: 50px;
+  
+    }
+
+    .productos-top h3 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      align-items: center;
+    
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      text-align: center;
+      padding: 10px;
+    }
+    
+
+    .slide img {
+      width: 50%;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 8px;
+      height: auto;
+      max-width: 250px;
+      
+    }
+
+    .descripcion {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+
+    /* Responsive: en pantallas pequeñas apila verticalmente */
+    @media (max-width: 980px) {
+      .contenedor-sliders {
+        flex-direction: column;
+        align-items: center;
+      }
+      .productos-top {
+        max-width: 90%;
+        margin-bottom: 20px;
+      }
+    }
+  h1 {
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+.footer {
+  background-color: #3e2f23;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer a {
+  color: #ffe0b2;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+/* Mejora visibilidad cuando hay video de fondo */
+.modal .modal-contenido {
+  background-color: rgba(255, 255, 255, 0.95); /* Transparencia leve para distinguir del fondo */
+}
+
+/* Asegura que el formulario tenga color visible */
+.reserva input,
+.reserva label,
+.reserva button {
+  color: #333;
+}
+
+/* Evita que se herede algún estilo transparente */
+.reserva {
+  background-color: #fff;
+  opacity: 1;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  backdrop-filter: blur(3px);
+}
+
+.modal-contenido {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 90%;
+  margin: 5% auto;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #5a3e3e;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Estilo para el iframe */
+#contenidoFormulario iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 0 0 12px 12px;
+}
